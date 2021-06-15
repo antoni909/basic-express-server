@@ -19,5 +19,3 @@ app.get('/data', (req,res)=>{
 
 // export express server
 module.exports = app;
-
-
