@@ -3,7 +3,7 @@
 const supertest = require('supertest');
 const server = require('../server.js');
 const request = supertest(server.app);
-
+                // spins up server on port 3000
 // code fellows repo class-01/demo
 /* 
 Assert the following
@@ -13,6 +13,8 @@ Assert the following
 200 if the name is in the query string
 given an name in the query string, the output object is correct
 */
+
+// super test copies server and makes requests
 
 describe('API server', () => {
 
