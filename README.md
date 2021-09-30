@@ -26,4 +26,3 @@ if successful; serves JSON object:
 {
   "name":"some-name"
 }
-

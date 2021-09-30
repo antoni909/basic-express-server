@@ -4,6 +4,8 @@ const express = require('express');
 // initialize
 const app = express();
 
+//app.use(express.json()) preparses json
+
 // Middleware Imports
 const logger = require('./src/middleware/logger');
 const validator = require('./src/middleware/validator');
@@ -16,7 +18,10 @@ app.use(logger);
 // Route
 app.get('/person', validator ,(req,res) => {
   console.log('served res');
-  res.status(200).send({ name : req.query.name });
+  let person = {
+    name: req.query.name
+  }
+  res.status(200).send(person);
 });
 
 // Post Routes Error Handling Middleware
@@ -27,6 +32,7 @@ app.use(serverErrorHandler);
 module.exports = {
   app: app,
   start: port => {
+    if(!port){throw new Error('missing PORT')};
     app.listen(port, () => {
       console.log(`server listening PORT: ${port}`);
     });
