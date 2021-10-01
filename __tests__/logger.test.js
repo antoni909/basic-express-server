@@ -11,10 +11,10 @@ describe('testing logger middleware', () => {
     };
     let responseObject = {};
     let nextFunction = jest.fn();
-    
+
     logger(requestObject, responseObject, nextFunction);
     // make sure that next is to called
     expect(nextFunction).toHaveBeenCalled();
-  } );
+  });
 
 });
